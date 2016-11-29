@@ -1,8 +1,8 @@
 
 
-var app = angular.module('regmyApp',[]);
-app.controller('Registercontroller', [ '$scope', '$http', function($scope, $http) {
-	var BASE_URL = 'http://localhost:8090/BackEnd';
+var mainapp = angular.module('regmyApp',[]);
+mainapp.controller('Registercontroller', [ '$scope', '$http', function($scope, $http) {
+	var BASE_URL = 'http://localhost:8081/BackEnd';
 
 	console.log("registering");
 	$scope.submit = function() {

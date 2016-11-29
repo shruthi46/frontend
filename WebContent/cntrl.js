@@ -1,6 +1,6 @@
-var app = angular.module('myApp', ['ngRoute','regmyApp','loginapp']);
+var app = angular.module('myApp', ['ngRoute','regmyApp','blogapp','forumApp']);
 
-app.config(function($routeProvider) {
+app.config(function( $routeProvider) {
   $routeProvider
 
    .when('/register', {
@@ -11,6 +11,16 @@ app.config(function($routeProvider) {
   .when('/login', {
     templateUrl : 'html/login.html',
     controller  : 'Logincontroller'
+ })
+ 
+ .when('/blog', {
+    templateUrl : 'html/blog.html',
+    controller  : 'Blogcontroller'
+ })
+ 
+ .when('/forum', {
+    templateUrl : 'html/forum.html',
+    controller  : 'Forumcontroller'
  })
 
   .otherwise({redirectTo: '/'});
