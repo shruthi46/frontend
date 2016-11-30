@@ -22,6 +22,14 @@ app.config(function( $routeProvider) {
     templateUrl : 'html/forum.html',
     controller  : 'Forumcontroller'
  })
+ .when('/friend', {
+    templateUrl : 'html/friend.html',
+    controller  : 'Friendcontroller'
+ })
+ .when('/job', {
+    templateUrl : 'html/job.html',
+    controller  : 'Jobcontroller'
+ })
 
   .otherwise({redirectTo: '/'});
 });
