@@ -23,7 +23,7 @@ border-radius:1px;
 <div class="container">
 <div data-ng-controller="Jobcontroller">
 <form role="form" class="form-horizontal" action="" data-ng-submit="submit()">
-<h2> Create Blog</h2>
+<h2> Create job</h2>
 <input type="hidden" data-ng-model="id" >
 
 <div class="form-group">
@@ -84,8 +84,8 @@ border-radius:1px;
 <p>{{job.doc}}</p>
 <p>{{job.lastdate}}</p>
 <hr>
-<p><button data-ng-click="editblog(blog.id,blog.title,blog.description)">edit</button>
-<button data-ng-click="deleteblog(blog.id)" class="btn btn-primary btn-danger">delete</button></p>
+<p><button data-ng-click="editjob(job.id,job.title,job.description)">edit</button>
+<button data-ng-click="deletejob(job.id)" class="btn btn-primary btn-danger">delete</button></p>
 </div>
 </div></div></div>
 
@@ -93,6 +93,6 @@ border-radius:1px;
 </div>
 </div>
 
-<script type="text/javascript" src="blogcntrl.js"></script>
+<script type="text/javascript" src="jobcntrl.js"></script>
 </body>
 </html>

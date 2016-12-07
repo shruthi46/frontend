@@ -1,12 +1,12 @@
-var bapp = angular.module('', []);
-bapp.controller('Blogcontroller', [ '$scope', '$http', function($scope, $http) {
-	var BASE_URL = 'http://localhost:8081/BackEnd';
+var app = angular.module('', []);
+app.controller('Jobcontroller', [ '$scope', '$http', function($scope, $http) {
+	var BASE_URL = 'http://localhost:8060/BackEnd';
 
-	$scope.getAllBlogs = function() {
-		console.log("get all blogs")
+	$scope.getAllJobs = function() {
+		console.log("get all jobs")
 		$http({
 			method : 'GET',
-			url : BASE_URL + '/blog'
+			url : BASE_URL + '/job'
 		}).success(function(data, status, headers, config) {
 			$scope.blogs = data;
 			// alert(data);
@@ -15,41 +15,43 @@ bapp.controller('Blogcontroller', [ '$scope', '$http', function($scope, $http) {
 		});
 	};
 	$scope.submit = function() {
-		console.log("create blog")
+		console.log("create job")
 
-		$scope.blog = {
+		$scope.job = {
 			id : $scope.id,
 			title : $scope.title,
 			userid : $scope.userid,
+			company : $scope.company,
+			jobdetails : $scope.jobdetails,
+			lastdate : $scope.lastdate,
 			doc : $scope.doc,
-			description : $scope.description,
 		}
 		$http({
 			method : 'POST',
-			url : BASE_URL + '/createblog',
+			url : BASE_URL + '/createjob',
 			data : $scope.blog
 		}).success(function(data, status, headers, config) {
 			$scope.id = '';
 			$scope.title = '';
 			$scope.userid = '';
 			$scope.doc = '';
-			$scope.description = '';
-			$scope.getAllBlogs();
+			$scope.company = '';
+			$scope.getAllJobs();
 		}).error(function(data, status, headers, config) {
 			alert("error");
 		});
 	};
-	$scope.deleteblog = function(id) {
+	$scope.deletejob = function(id) {
 		$http({
 			method : 'DELETE',
-			url : BASE_URL + '/deleteblog/' + id
+			url : BASE_URL + '/deletejob/' + id
 		}).success(function(data, status, headers, config) {
-			$scope.getAllBlogs();
+			$scope.getAllJobs();
 		})
 	};
-	$scope.editblog = function(id, title, description) {
+	$scope.editblog = function(id, title, company) {
 		$scope.id = id;
 		$scope.title = title;
-		$scope.description = description;
+		$scope.company = company;
 	}
 } ]);
