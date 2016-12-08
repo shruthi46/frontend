@@ -42,4 +42,17 @@ mainapp.controller('Registercontroller', [ '$scope', '$http', function($scope, $
 			alert("error");
 		});
 	};
+	
+	
+	
+$scope.currentuser=function(id){
+		
+		console.log("oneuser")
+		$http({
+			method:'GET',
+			url:BASE_URL+'/oneuser/'+id
+		}).success(function(data,status,headers,config){
+			$scope.oneuser=data;
+		})
+	}
 }]);

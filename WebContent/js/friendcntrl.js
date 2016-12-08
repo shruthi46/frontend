@@ -1,4 +1,4 @@
-/*var app = angular.module('friendApp', []);
+var app = angular.module('friendApp', []);
 app.controller('alluserctrl',['$scope','$http',function($scope,$http){
 	var BASE_URL = 'http://localhost:8060/BackEnd';
 	$scope.getAllUsers= function() {
@@ -14,7 +14,7 @@ app.controller('alluserctrl',['$scope','$http',function($scope,$http){
 			alert("Error");
 		});
 	};
-	
+	console.log('send');
 	$scope.sendrequest=function(fid){
 		$http({
 			method:'POST',
@@ -25,4 +25,4 @@ app.controller('alluserctrl',['$scope','$http',function($scope,$http){
 			alert("Error");
 		})
 	}
-}])*/
+}])

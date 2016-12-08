@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute','regmyApp','blogapp','forumApp','ngCookies','lapp'])
+var app = angular.module('myApp', ['ngRoute','regmyApp','blogapp','forumApp','ngCookies','lapp','friendApp','frndmyApp'])
 .run(run);
 app.config(function( $routeProvider) {
   $routeProvider
@@ -42,6 +42,19 @@ app.config(function( $routeProvider) {
     templateUrl : 'html/chat.html',
     controller  : 'chatcontroller'
  })
+ .when('/myprofile', {
+    templateUrl : 'html/UserProfile.html',
+    controller  : 'userctrl'
+ })
+ 
+ .when("/myfriends",{
+    	templateUrl: "html/MyFriends.html",
+    	controller: "myfriendctrl"
+    })
+    .when("/newrequests",{
+    	templateUrl: "html/newrequests.html",
+    	controller: "myfriendctrl"
+    })
 
   .otherwise({redirectTo: '/'});
 });

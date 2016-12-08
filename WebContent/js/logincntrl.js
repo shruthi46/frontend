@@ -36,7 +36,7 @@ app.controller('Logincontroller', Logincontroller);
         	AuthenticationService.Logout(function(response){
         		if(response.success){
         			AuthenticationService.ClearCredentials();
-        			$location.path('/home');
+        			$location.path('#/');
         			$rootScope.islogged=false;
         			
         		}else{
