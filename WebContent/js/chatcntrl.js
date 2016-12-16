@@ -1,5 +1,5 @@
 console.log("app")
-app.controller("chatcontroller",function($scope,ChatService){
+app.controller("chatController",function($scope,ChatService){
 	console.log("chatctrl")
 	$scope.messages=[];
 	$scope.message="";

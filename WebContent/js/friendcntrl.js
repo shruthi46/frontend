@@ -1,6 +1,6 @@
 var app = angular.module('friendApp', []);
 app.controller('alluserctrl',['$scope','$http',function($scope,$http){
-	var BASE_URL = 'http://localhost:8060/BackEnd';
+	var BASE_URL = 'http://localhost:8082/BackEnd';
 	$scope.getAllUsers= function() {
 		console.log("usersctrl")
 		console.log("get all users")

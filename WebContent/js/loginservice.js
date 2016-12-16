@@ -2,7 +2,7 @@ var app=angular
         .module('lapp')
         .factory('AuthenticationService', AuthenticationService);
 
- var BASE_URL = 'http://localhost:8060/BackEnd';
+ var BASE_URL = 'http://localhost:8082/BackEnd';
     AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope'];
     function AuthenticationService($http, $cookieStore, $rootScope) {
         var service = {};

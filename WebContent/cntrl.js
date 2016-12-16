@@ -8,6 +8,11 @@ app.config(function( $routeProvider) {
     controller  : 'Registercontroller'
  })
  
+ .when('/UserProfile', {
+	      templateUrl: 'html/UserProfile.html', 
+	      controller: 'Registercontroller'
+	   })
+ 
  .when('/home', {
     templateUrl : 'home.html',
     controller  : 'Logincontroller',
@@ -19,6 +24,10 @@ app.config(function( $routeProvider) {
     controller  : 'Logincontroller',
     controllerAs:'vm'
  })
+ .when('/individualforum', {
+	 templateUrl: 'html/IndividualForum.html', 
+	controller: 'commentcontroller'
+			   })
  
  .when('/blog', {
     templateUrl : 'html/blog.html',
@@ -40,7 +49,7 @@ app.config(function( $routeProvider) {
  
  .when('/chat', {
     templateUrl : 'html/chat.html',
-    controller  : 'chatcontroller'
+    controller  : 'chatController'
  })
  .when('/myprofile', {
     templateUrl : 'html/UserProfile.html',

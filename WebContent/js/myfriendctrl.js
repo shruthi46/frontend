@@ -1,6 +1,6 @@
 var app = angular.module('frndmyApp',[]);
 app.controller('myfriendctrl',['$scope','$http',function($scope,$http){
-	var BASE_URL = 'http://localhost:8060/BackEnd';
+	var BASE_URL = 'http://localhost:8082/BackEnd';
 	
 	$scope.getmyfriends=function(){
 		$http({

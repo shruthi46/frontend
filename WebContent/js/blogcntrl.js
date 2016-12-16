@@ -1,6 +1,6 @@
 var bapp = angular.module('blogapp', []);
 bapp.controller('Blogcontroller', [ '$scope', '$http', function($scope, $http) {
-	var BASE_URL = 'http://localhost:8060/BackEnd';
+	var BASE_URL = 'http://localhost:8082/BackEnd';
 
 	$scope.getAllBlogs = function() {
 		console.log("get all blogs")

@@ -3,15 +3,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-
 <script type="text/javascript" src="lib/angular.min.js"></script>
 <script type="text/javascript" src="lib/angular-route.min.js"></script>
-
-<style>
-body {
-	padding-top: 100px;
-}
-</style>
 </head>
 
 <body data-ng-app="forumApp">
@@ -69,7 +62,7 @@ body {
 					<div class="row">
 						<div class="span3">
 							<div class="well">
-								<h2 class="text-info">{{forum.name}}</h2>
+								<h2 class="text-info"><a href=" " data-ng-click="getforum(forum.id)">{{forum.name}}</a></h2>
 								<p>
 									<span class="label label-info"><font size="3">{{forum.topic}}</font></span>
 								</p>

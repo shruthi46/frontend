@@ -6,7 +6,7 @@ app.service("ChatService",function($q,$timeout){
 	},messageIds=[];
 	
 	service.RECONNECT_TIMEOUT=30000;
-	service.SOCKET_URL="/CollabServer/chat";
+	service.SOCKET_URL="/backendcollab/chat";
 	service.CHAT_TOPIC="/topic/message";
 	service.CHAT_BROKER="/app/chat";
 	

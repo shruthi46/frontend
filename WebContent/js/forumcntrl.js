@@ -1,6 +1,6 @@
 var fapp = angular.module('forumApp',[]);
 fapp.controller('Forumcontroller', [ '$scope', '$http', function($scope, $http) {
- var BASE_URL = 'http://localhost:8060/BackEnd';
+ var BASE_URL = 'http://localhost:8082/BackEnd';
  $scope.getAllForum= function() {
   console.log("get all forum")
   $http({
@@ -45,4 +45,27 @@ fapp.controller('Forumcontroller', [ '$scope', '$http', function($scope, $http) 
    $scope.getAllForum();
   })
  };
+ $scope.editforum=function(id,name,topic,description){
+	 $scope.id=id;
+	 $scope.name=name;
+	 $scope.topic=topic;
+	 $scope.description=description;
+	 }
+
+	 $scope.getforum=function(id){
+	 	
+	 	console.log("iforum")
+	 	$http({
+	 		method: "GET",
+	 		url:BASE_URL+'/individualforum/'+id,
+	 	}).success(function(data,status,headers,config){
+	 		console.log("inside the forum")
+	 		$location.path('/individualforum');
+	 		console.log("after inside the forum")
+	 		$rootScope.individualforums=data;
+	 		console.log(data)
+	 	}).error(function(data, status, headers, config) {
+	 		alert("Error");
+	 	});
+	 }
 }]);

@@ -1,6 +1,6 @@
 var app = angular.module('', []);
 app.controller('Jobcontroller', [ '$scope', '$http', function($scope, $http) {
-	var BASE_URL = 'http://localhost:8060/BackEnd';
+	var BASE_URL = 'http://localhost:8082/BackEnd';
 
 	$scope.getAllJobs = function() {
 		console.log("get all jobs")
