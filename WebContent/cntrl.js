@@ -1,6 +1,6 @@
-var app = angular.module('myApp', ['ngRoute','regmyApp','blogapp','forumApp','ngCookies','lapp','friendApp','frndmyApp'])
+var app = angular.module('myApp', ['ngRoute','regmyApp','blogapp','forumApp','myforumApp','ngCookies','lapp','friendApp','frndmyApp'])
 .run(run);
-app.config(function( $routeProvider) {
+app.config(function( $routeProvider,$locationProvider) {
   $routeProvider
 
    .when('/register', {
