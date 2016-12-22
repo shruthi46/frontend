@@ -8,7 +8,7 @@ app.controller('Jobcontroller', [ '$scope', '$http', function($scope, $http) {
 			method : 'GET',
 			url : BASE_URL + '/job'
 		}).success(function(data, status, headers, config) {
-			$scope.blogs = data;
+			$scope.jobs = data;
 			// alert(data);
 		}).error(function(data, status, headers, config) {
 			alert("Error");
@@ -29,7 +29,7 @@ app.controller('Jobcontroller', [ '$scope', '$http', function($scope, $http) {
 		$http({
 			method : 'POST',
 			url : BASE_URL + '/createjob',
-			data : $scope.blog
+			data : $scope.job
 		}).success(function(data, status, headers, config) {
 			$scope.id = '';
 			$scope.title = '';

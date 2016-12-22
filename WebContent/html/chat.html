@@ -5,8 +5,10 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="js/chatcntrl.js"></script>
 <script type="text/javascript" src="js/chatservice.js"></script>
+<script type="text/javascript" src="lib/angular.min.js"></script> 
+ <script type="text/javascript" src="lib/angular-route.min.js"></script> 
 </head>
-<body data-ng-app="mainApp">
+<body data-ng-app="chatapp">
 <div data-ng-controller="chatController">
 <form data-ng-submit="addMessage()" name="messageForm">
 <input type="text" placeholder="Enter new Message" data-ng-model="message">

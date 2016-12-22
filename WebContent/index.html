@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap Case</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="lib/angular.min.js"></script> 
+
+<style>
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	width: 70%;
+	margin: auto;
+}
+</style>
+
+<meta charset="ISO-8859-1">
+<title>COLLABORATION</title>
+
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script type="text/javascript" src="lib/angular.min.js"></script> 
  <script type="text/javascript" src="lib/angular-route.min.js"></script> 
  <script type="text/javascript" src="lib/angular-cookies.js"></script>
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
@@ -21,44 +41,62 @@
 <script src="js/myfriendctrl.js"></script>
  <script src="js/jobcntrl.js"></script>
  <script src="js/chatcntrl.js"></script>
+  <script src="js/chatservice.js"></script>
  <script src="js/loginservice.js"></script> 
  <script src="js/commentcntrl.js"></script>
- <script src="cntrl.js"></script> 
+ <script src="cntrl.js"></script>
+ <style>
+body {
+    /* background-color: #cccccc; */
+    background-image: url("http://templatemints.com/rttheme13/images/background_images/abstract_background7.jpg");
+}
+</style>
+
 </head>
+<body data-ng-app="myApp">
 
-<body data-ng-app="myApp" >
-<div class="container">
-    <nav class="navbar navbar-default navbar-xs" role="navigation">
-  
-  <div class="navbar-header">
-    
-     <a class="navbar-brand" href="#/"><b>home</b></a>
-  </div>
+	<div class="container-fluid">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
 
- 
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-    
-    <li><a href="#/home">Home</a></li>
+				<a class="navbar-brand" href="#/"><b>HOME</b></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					
       <li><a href="#/blog">Blog</i></a></li>
       <li><a href="#/forum">Forum</a></li>
      <li><a href="#/friend">Find Friends</a></li>
      <li><a href="#/chat">chat</a></li>
-     <li><a href="#/job">Job</a></li>
+    <!--  <li><a href="#/job">Job</a></li> -->
       <li class=""><a href="#/UserProfile" data-toggle="tab">myProfile</a></li>
-     
-    </ul>
-    
-    <ul class="nav navbar-nav navbar-right">
-     <li><a href="#/register" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-user"></i></a></li>
+					
+				</ul>
+
+	<ul class="nav navbar-nav navbar-right">
+	<li><a href="#/register" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-user"></i></a></li>
      <li><a href="#/login" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li>
-     <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
+	<li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged"><span style="color:#FF0000;">
+Welcome:{{globals.currentUser.username}}</span></li>
+     
+     
       
-    <li data-ng-show="globals.currentUser.islogged"><a href="" data-ng-click="vm.logout()">logout</a></li>
-    </ul>
+     <li data-ng-show="globals.currentUser.islogged"><a href="#/home" data-ng-click="vm.logout()">logout</a></li> 
     
-  </div>
-</nav>
-</div>
-<div data-ng-view></div>
-</body> 
+    </ul>
+			</div>
+			
+		</nav>
+	</div>
+	<div data-ng-view></div>
+	
+<div id="push">
+</div> 
+	
+</body>
+
+</html>

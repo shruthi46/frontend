@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute','regmyApp','blogapp','forumApp','myforumApp','ngCookies','lapp','friendApp','frndmyApp'])
+var app = angular.module('myApp', ['ngRoute','chatapp','regmyApp','blogapp','forumApp','myforumApp','ngCookies','lapp','friendApp','frndmyApp'])
 .run(run);
 app.config(function( $routeProvider,$locationProvider) {
   $routeProvider
@@ -42,10 +42,10 @@ app.config(function( $routeProvider,$locationProvider) {
     templateUrl : 'html/friend.html',
     controller  : 'alluserctrl'
  })
- .when('/job', {
+/* .when('/job', {
     templateUrl : 'html/job.html',
     controller  : 'Jobcontroller'
- })
+ })*/
  
  .when('/chat', {
     templateUrl : 'html/chat.html',
